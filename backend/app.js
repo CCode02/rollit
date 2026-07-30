@@ -1,7 +1,21 @@
 import express from 'express'
+import mongoose from 'mongoose'
 import middleware from './utils/middleware.js'
+import logger from './utils/logger.js'
+import config from './utils/config.js'
 
 const app = express()
+
+logger.info('Connecting to', config.MONGODB_URI)
+
+mongoose
+    .connect(config.MONGODB_URI)
+    .then(() => {
+        logger.info('Connected to mongoDB')
+    })
+    .catch((error) => {
+        logger.error('Error connection to MongoDB:', error.message)
+    })
 
 app.use(express.json())
 app.use(middleware.requestLogger)
