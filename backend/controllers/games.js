@@ -5,7 +5,9 @@ import gamesRepository from "../repository/gamesRepository.js";
 const gamesRouter = express.Router()
 
 gamesRouter.get('/', (request, response) => {
-    console.log('games')
+    gamesRepository.getAll().then((games) => {
+        response.json(games)
+    })
 })
 
 export default gamesRouter
