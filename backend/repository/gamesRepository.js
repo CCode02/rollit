@@ -5,6 +5,11 @@ const getAll = () => {
      return Game.find({})
 }
 
+const getById = (id) => {
+    return Game.findById(id)
+}
+
 export default {
-    getAll
+    getAll,
+    getById
 }

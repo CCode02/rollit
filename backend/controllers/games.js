@@ -10,4 +10,10 @@ gamesRouter.get('/', (request, response) => {
     })
 })
 
+gamesRouter.get('/:id', (request, response) => {
+    gamesRepository.getById(request.params.id).then((game) => {
+        response.json(game)
+    })
+})
+
 export default gamesRouter
