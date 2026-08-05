@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import middleware from './utils/middleware.js'
 import logger from './utils/logger.js'
 import config from './utils/config.js'
+import gamesRouter from "./controllers/games.js";
 
 const app = express()
 
@@ -23,6 +24,8 @@ app.use(middleware.requestLogger)
 app.get('/', async (request, response) => {
     response.status(200).send('hello world')
 })
+
+app.use('/api/games', gamesRouter)
 
 app.use(middleware.unknownEndpoint)
 
