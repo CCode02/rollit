@@ -15,8 +15,13 @@ const createGame = (newGame) => {
     return game.save()
 }
 
+const deleteGame = (id) => {
+    return Game.findByIdAndDelete(id)
+}
+
 export default {
     getAll,
     getById,
-    createGame
+    createGame,
+    deleteGame
 }

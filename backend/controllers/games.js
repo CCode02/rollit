@@ -22,4 +22,10 @@ gamesRouter.post('/', (request, response) => {
     })
 })
 
+gamesRouter.delete('/:id', (request, response) => {
+    gamesRepository.deleteGame(request.params.id).then(() => {
+        response.status(204).end()
+    })
+})
+
 export default gamesRouter
