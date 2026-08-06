@@ -16,4 +16,10 @@ gamesRouter.get('/:id', (request, response) => {
     })
 })
 
+gamesRouter.post('/', (request, response) => {
+    gamesRepository.createGame(request.body).then((savedGame) => {
+        response.status(201).json(savedGame)
+    })
+})
+
 export default gamesRouter

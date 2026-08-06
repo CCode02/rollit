@@ -9,7 +9,14 @@ const getById = (id) => {
     return Game.findById(id)
 }
 
+const createGame = (newGame) => {
+    const game = new Game(newGame)
+
+    return game.save()
+}
+
 export default {
     getAll,
-    getById
+    getById,
+    createGame
 }

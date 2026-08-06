@@ -1,0 +1,12 @@
+POST http://localhost:3003/api/games
+Content-Type: application/json
+
+{
+    "name" : "Partida test",
+    "dungeonMaster" : "6a728e5f154dcc5688e995a8",
+    "players" : [
+        "6a728e5f154dcc5688e995a8", 
+        "6a728e5f154dcc5688e995a8"
+        ],
+    "system" : "6a728e5f154dcc5688e995a8"
+}
