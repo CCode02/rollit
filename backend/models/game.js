@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const gameSchema = new mongoose.Schema({
+    name: 'String',
     dungeonMaster: {
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
