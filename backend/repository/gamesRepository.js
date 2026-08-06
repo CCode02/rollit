@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import Game from "../models/game.js";
 
 const getAll = () => {
-     return Game.find({})
+    return Game.find({})
 }
 
 const getById = (id) => {
@@ -19,9 +19,14 @@ const deleteGame = (id) => {
     return Game.findByIdAndDelete(id)
 }
 
+const updateGame = (id, game) => {
+    return Game.findByIdAndUpdate(id, game, { returnDocument: 'after' })
+}
+
 export default {
     getAll,
     getById,
     createGame,
-    deleteGame
+    deleteGame,
+    updateGame
 }

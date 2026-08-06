@@ -28,4 +28,10 @@ gamesRouter.delete('/:id', (request, response) => {
     })
 })
 
+gamesRouter.put('/:id', (request, response) => {
+    gamesRepository.updateGame(request.params.id, request.body).then((updatedGame) => {
+        response.json(updatedGame)
+    })
+})
+
 export default gamesRouter
